@@ -1,3 +1,7 @@
+from functools import partial
+from nameko.web.handlers import HttpRequestHandler
+from nameko.extensions import register_entrypoint
+
 class CorsHttpRequestHandler(HttpRequestHandler):
     """
     A Cors Http handler. 
