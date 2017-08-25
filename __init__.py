@@ -15,6 +15,8 @@ class CorsHttpRequestHandler(HttpRequestHandler):
 
     def handle_request(self, request):
         self.request = request
+        if request.method == 'OPTIONS':
+            return self.response_from_result(result='')
         return super().handle_request(request)
 
     def response_from_result(self, *args, **kwargs):
